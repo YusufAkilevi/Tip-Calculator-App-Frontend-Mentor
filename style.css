@@ -75,7 +75,7 @@ main {
   text-align: right;
 }
 .input:focus {
-  outline: 1px solid hsl(172, 67%, 45%);
+  outline: 2px solid hsl(172, 67%, 45%);
 }
 .tip-title {
   margin-bottom: 1.6rem;
@@ -104,6 +104,10 @@ main {
   color: hsl(183, 100%, 15%);
   cursor: pointer;
 }
+.label {
+  display: flex;
+  justify-content: space-between;
+}
 .active {
   background-color: hsl(172, 67%, 45%);
   color: hsl(183, 100%, 15%);
@@ -121,6 +125,68 @@ main {
 #custom-tip::placeholder {
   text-align: center;
 }
+.results-container {
+  background-color: hsl(183, 100%, 15%);
+  border-radius: 1.5rem;
+  padding: 4.8rem 3.6rem 3.6rem 3.6rem;
+  color: hsl(189, 41%, 97%);
+  display: flex;
+  flex-direction: column;
+  gap: 3.6rem;
+}
+.tip-amount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tip-amount-title {
+  display: flex;
+  flex-direction: column;
+}
+.tip-amount-title p {
+  font-size: 1.4rem;
+}
+.tip-amount-title span {
+  color: hsl(184, 14%, 56%);
+  font-size: 1.2rem;
+}
+.tip-amount .result,
+.total .result {
+  color: hsl(172, 67%, 45%);
+  font-size: 4rem;
+}
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.total p {
+  font-size: 1.4rem;
+}
+.total span {
+  color: hsl(184, 14%, 56%);
+  font-size: 1.2rem;
+}
+
+.btn-reset {
+  width: 100%;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  background-color: hsl(186, 14%, 43%);
+  color: hsl(183, 100%, 15%);
+  padding: 1.5rem;
+  border-radius: 5px;
+  margin-top: auto;
+  cursor: pointer;
+}
+.btn-reset:hover {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+}
+
 .border-radius-5px {
   border-radius: 5px;
 }
