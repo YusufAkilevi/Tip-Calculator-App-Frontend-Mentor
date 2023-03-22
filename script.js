@@ -41,15 +41,15 @@ billInput.addEventListener("change", function () {
 customTip.addEventListener("change", function () {
   if (document.querySelector(".active")) removeActiveClass();
   tipPercentage = +customTip.value;
-  console.log(peopleNumber, billAmount, tipPercentage);
   showResults();
 });
 tipPercentages.addEventListener("click", function (e) {
   const target = e.target;
   if (target.classList.contains("tip-percentage")) {
     tipPercentage = +e.target.dataset.tip;
+    if (document.querySelector(".active"))
+      document.querySelector(".active").classList.remove("active");
     target.classList.add("active");
-    console.log(peopleNumber, billAmount, tipPercentage);
   }
   showResults();
 });
@@ -72,7 +72,6 @@ peopleNumberInput.addEventListener("change", function () {
       this.style.outline = "2px solid hsl(172, 67%, 45%)";
     });
     peopleNumber = peopleNumberInput.value;
-    console.log(peopleNumber, billAmount, tipPercentage);
     if (document.querySelector("#peopleNum-label-red"))
       document.querySelector("#peopleNum-label-red").remove();
   }
