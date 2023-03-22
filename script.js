@@ -86,3 +86,5 @@ resetBtn.addEventListener("click", function () {
   if (document.querySelector("#peopleNum-label-red"))
     document.querySelector("#peopleNum-label-red").remove();
 });
+
+// Fix the tip button active state. There can be more than one active button????

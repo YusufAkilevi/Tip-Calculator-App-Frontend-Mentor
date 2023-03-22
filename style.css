@@ -198,3 +198,21 @@ main {
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
+@media (max-width: 37.5em) {
+  main {
+    height: auto;
+    gap: 4rem;
+  }
+  .title-icon {
+    margin-top: 5rem;
+  }
+  .splitter-container {
+    width: 100%;
+    grid-template-columns: 1fr;
+    row-gap: 3rem;
+  }
+  .tip-percentages {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+  }
+} ;
