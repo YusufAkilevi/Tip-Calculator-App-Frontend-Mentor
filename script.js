@@ -5,6 +5,7 @@ const tipPercentages = document.querySelector(".tip-percentages");
 const tipAmountResult = document.querySelector("#tip-amount-result");
 const totalResult = document.querySelector("#total-result");
 const resetBtn = document.querySelector(".btn-reset");
+
 let billAmount;
 let tipPercentage;
 let peopleNumber;
@@ -34,15 +35,21 @@ const removeActiveClass = () => {
   document.querySelector(".active").classList.remove("active");
 };
 
+/////////////////////
+/////////////////////
+/////////////////////
+
 billInput.addEventListener("change", function () {
   billAmount = +billInput.value;
   showResults();
 });
+
 customTip.addEventListener("change", function () {
   if (document.querySelector(".active")) removeActiveClass();
   tipPercentage = +customTip.value;
   showResults();
 });
+
 tipPercentages.addEventListener("click", function (e) {
   const target = e.target;
   if (target.classList.contains("tip-percentage")) {
@@ -53,6 +60,7 @@ tipPercentages.addEventListener("click", function (e) {
   }
   showResults();
 });
+
 peopleNumberInput.addEventListener("change", function () {
   if (peopleNumberInput.value == 0) {
     const html = `
@@ -77,6 +85,7 @@ peopleNumberInput.addEventListener("change", function () {
   }
   showResults();
 });
+
 resetBtn.addEventListener("click", function () {
   billAmount = tipPercentage = peopleNumber = 0;
   billInput.value = customTip.value = peopleNumberInput.value = "";
@@ -85,5 +94,3 @@ resetBtn.addEventListener("click", function () {
   if (document.querySelector("#peopleNum-label-red"))
     document.querySelector("#peopleNum-label-red").remove();
 });
-
-// Fix the tip button active state. There can be more than one active button????
