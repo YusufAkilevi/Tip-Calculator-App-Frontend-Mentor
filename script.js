@@ -17,6 +17,10 @@ const totalAmountPerPerson = (tipPercentage, bill, people) => {
   return ((bill + (bill * tipPercentage) / 100) / people).toFixed(2);
 };
 
+const numberCheck = (input) => {
+  return isFinite(input);
+};
+
 const showResults = () => {
   if (billAmount && tipPercentage && peopleNumber) {
     tipAmountResult.textContent = `$${tipAmountPerPerson(
@@ -40,8 +44,28 @@ const removeActiveClass = () => {
 /////////////////////
 
 billInput.addEventListener("change", function () {
-  billAmount = +billInput.value;
-  showResults();
+  if (numberCheck(billInput.value)) {
+    billAmount = +billInput.value;
+    if (document.querySelector("#bill-label-red"))
+      document.querySelector("#bill-label-red").remove();
+    billInput.addEventListener("focus", function () {
+      this.style.outline = "2px solid hsl(172, 67%, 45%)";
+    });
+    showResults();
+  } else {
+    const html = `
+    <label style="color:rgb(251, 83, 11) " for="bill" id="bill-label-red">
+        Must be a number!
+    </label>`;
+    if (!document.querySelector("#bill-label-red")) {
+      document
+        .querySelector("#bill-label")
+        .insertAdjacentHTML("afterend", html);
+    }
+    billInput.addEventListener("focus", function () {
+      this.style.outline = "2px solid rgb(251, 83, 11)";
+    });
+  }
 });
 
 customTip.addEventListener("change", function () {

@@ -104,7 +104,8 @@ main {
   color: hsl(183, 100%, 15%);
   cursor: pointer;
 }
-.label {
+.label,
+.label-bill {
   display: flex;
   justify-content: space-between;
 }
